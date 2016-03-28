@@ -36,6 +36,7 @@ class config
     $bucketName = "name"
     $test = new config($bucketName);
     $test->conenct_to_filestore($projectId);
+    echo $test;
 
 ?>
 
