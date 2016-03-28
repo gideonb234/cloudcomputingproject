@@ -7,7 +7,7 @@ class User {
     private $name;
 
     public function login() {
-        // Use bcrypt here
+        // Use bcrypt here (and db connection yes)
     }
 
     public function register() {
