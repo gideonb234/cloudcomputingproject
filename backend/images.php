@@ -4,6 +4,9 @@
  * Also possible handle the link generation????
  * Handle comments for each image as well (just create and list is needed)
  */
+
+include '../error-enable.php';
+
 class ImageHandler{
     public function uploadImage() {
 

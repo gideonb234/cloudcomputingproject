@@ -1,5 +1,8 @@
 <?php
 // It handles users what more do you want 
+
+include '../error-enable.php';
+
 class User {
 
     private $email;
@@ -15,11 +18,11 @@ class User {
     }
 
     public function validatePassword($password) {
-        
+
     }
 
     public function getUser($user_id) {
-        
+
     }
 }
 ?>
