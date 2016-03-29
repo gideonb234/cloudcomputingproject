@@ -8,7 +8,7 @@ class CloudSql
     private $username = "dbaccess";
     private $password = "1234567890";
 
-    private function newConnection()
+    public function newConnection()
     {
         $pdo = new PDO($this->mysqlinfo, $this->username, $this->password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
