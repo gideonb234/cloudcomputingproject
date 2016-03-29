@@ -5,7 +5,7 @@
  * Handle comments for each image as well (just create and list is needed)
  */
 
-include '../error-enable.php';
+include_once '../error-enable.php';
 
 class ImageHandler{
     public function uploadImage() {
