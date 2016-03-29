@@ -1,7 +1,7 @@
 <?php
 // It handles users what more do you want 
 
-include '../error-enable.php';
+include_once '../error-enable.php';
 
 class User {
 

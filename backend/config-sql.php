@@ -1,6 +1,6 @@
 <?php
 
-include '../error-enable.php';
+include_once '../error-enable.php';
 
 use PDO;
 
