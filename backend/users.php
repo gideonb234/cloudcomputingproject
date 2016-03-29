@@ -11,23 +11,15 @@ class User {
     }
 
     public function register() {
-        // Use bcrypt here
+        // Use bcrypt here (and db connection yes)
     }
 
     public function validatePassword($password) {
-
+        
     }
 
     public function getUser($user_id) {
-
-    }
-
-    public function setPassword($user_id, $new_pass) {
-
-    }
-
-    public function setEmail($user_id, $new_email) {
-        // get user as an object, set their email
+        
     }
 }
 ?>
