@@ -2,7 +2,7 @@
 
 include_once 'backend/config-sql.php';
 include_once 'backend/config-storage.php';
-include_once 'error-enable.php'
+include_once 'error-enable.php';
 
 $cloudSql = new CloudSQL();
 $cloudSql->newConnection();
