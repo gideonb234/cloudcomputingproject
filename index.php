@@ -1,5 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
+  <?php
+    if (isset($_POST['register_form'])) {
+      echo "register works";
+    }
+  ?> 
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -36,7 +41,7 @@
   <!-- popup form #1 -->
   <a href="#x" class="overlay" id="login_form"></a>
   <div class="popup">
-    <form id="login_form" action="" method="POST">
+    <form name="login_form" action="" method="POST">
       <h2>Welcome Guest!</h2>
       <p>Please enter your username and password here</p>
       <div>
@@ -55,7 +60,7 @@
   <!-- popup form #2 -->
   <a href="#x" class="overlay" id="regform_form"></a>
   <div class="popup">
-    <form id="register_form" action="" method="POST">
+    <form name="register_form" action="backend/login-regsiter.php" method="POST">
       <h2>Welcome!</h2>
       <p>Please enter your username and password and email here</p>
       <div>
@@ -67,6 +72,7 @@
         <input type="password" id="password" value="" />
       </div>
       <div>
+        <label for="confirm_password">Confirm</label>
         <input type="password" id="conifrm_password" value="" />
       </div>
       <div>

@@ -8,8 +8,6 @@ class User {
     public function login($username, $password) {
         // Use bcrypt here (and db connection yes)
         // save the user id to session
-        // $_SESSION['user_id'] = $id;
-        // $_SESSION['username'] = $username;
         try {
             $query = $this->db->prepare("SELECT * FROM users WHERE user_name=:uname OR user_email=:umail LIMIT 1");
             $query->execute(array(':uname'=>$uname, ':umail'=>$umail));
