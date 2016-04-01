@@ -60,26 +60,26 @@
   <!-- popup form #2 -->
   <a href="#x" class="overlay" id="regform_form"></a>
   <div class="popup">
-    <form name="register_form" action="backend/login-regsiter.php" method="POST">
+    <form name="register_form" action="backend/login-register.php" method="POST">
       <h2>Welcome!</h2>
       <p>Please enter your username and password and email here</p>
       <div>
         <label for="username">Username</label>
-        <input type="text" id="username" value="" />
+        <input type="text" name="username" id="username" value="" />
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" id="password" value="" />
+        <input type="password" name="password" id="password" value="" />
       </div>
       <div>
         <label for="confirm_password">Confirm</label>
-        <input type="password" id="conifrm_password" value="" />
+        <input type="password" name="confirm_password" id="conifrm_password" value="" />
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" value="" />
+        <input type="email" id="email" name="email" value="" />
       </div>
-      <input type="submit" value="Register" />
+      <input type="submit" name="register_form" value="Register" />
     </form>
     <a class="close" href="#close"></a>
   </div>

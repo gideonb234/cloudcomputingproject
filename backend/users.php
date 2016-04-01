@@ -33,13 +33,14 @@ class User {
             if($password === $confirm_password) {
                 $new_password = password_hash($password, PASSWORD_DEFAULT);
             }
-            $stmt = $this->db->prepare("INSERT INTO User (username,email,password) VALUES(:uname, :umail, :upass)");
+            $stmt = $conn->prepare("INSERT INTO User (username,email,password) VALUES(:uname, :umail, :upass)");
               
             $stmt->bindparam(":uname", $username);
             $stmt->bindparam(":umail", $email);
             $stmt->bindparam(":upass", $password);
-            return $stmt; 
-            // the actual statement expression will be done elsewhere
+	    $stmt->execute();
+            return $conn->lastInsertId();
+	    $db = null;
         } catch(PDOException $e) {
            echo $e->getMessage();
         }    
