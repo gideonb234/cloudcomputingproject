@@ -41,18 +41,18 @@
   <!-- popup form #1 -->
   <a href="#x" class="overlay" id="login_form"></a>
   <div class="popup">
-    <form name="login_form" action="" method="POST">
+    <form name="login_form" action="backend/login-register.php" method="POST">
       <h2>Welcome Guest!</h2>
       <p>Please enter your username and password here</p>
       <div>
         <label for="username">Login</label>
-        <input type="text" id="username" value="" />
+        <input type="text" name="username" id="username" value="" />
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" id="password" value="" />
+        <input type="password" name="password" id="password" value="" />
       </div>
-      <input type="submit" value="Log In" />
+      <input type="submit" name="login_form" value="Log In" />
     </form>
     <a class="close" href="#close"></a>
   </div>

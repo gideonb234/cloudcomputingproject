@@ -9,7 +9,9 @@ class User {
         // Use bcrypt here (and db connection yes)
         // save the user id to session
         try {
-            $query = $this->db->prepare("SELECT * FROM users WHERE user_name=:uname OR user_email=:umail LIMIT 1");
+	    $db = new CloudSql;
+            $conn = $db->connection();
+            $query = $conn->prepare("SELECT * FROM users WHERE user_name=:uname OR user_email=:umail LIMIT 1");
             $query->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $userRow=$query->fetch(PDO::FETCH_ASSOC);
             if($query->rowCount() > 0) {

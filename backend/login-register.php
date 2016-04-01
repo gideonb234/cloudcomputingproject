@@ -2,7 +2,11 @@
     require_once 'users.php';
     require_once 'config-sql.php';
     if(isset($_POST['login_form'])) {
-        echo "login form";
+	$user = new User();
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $user->login($username, $password);
+        header("Location:../index.php");
     }
     if(isset($_POST['register_form'])) {
         $user = new User();
