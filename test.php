@@ -5,7 +5,7 @@ include_once 'backend/config-storage.php';
 include_once 'error-enable.php';
 
 $cloudSql = new CloudSQL();
-$cloudSql->newConnection();
+$cloudSql->connection();
 echo "test succcess";
 
 $cloudStorage = new CloudStorage();

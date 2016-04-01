@@ -10,7 +10,7 @@ include_once 'config-sql.php';
 
 class ImageHandler{
     public function uploadImage() {
-
+        
     }
 
     public function generateLink() {
@@ -18,7 +18,9 @@ class ImageHandler{
     }
 
     public function saveToDb() {
-
+        $db = new CloudSql();
+        $query = "INSERT INTO Image() VALUES() &&";
+        $db->create($query, $mediaLink);
     }
 
     public function getImage($id)

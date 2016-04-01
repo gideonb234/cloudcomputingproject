@@ -10,14 +10,18 @@ class CloudSql
     private $username = "dbaccess";
     private $password = "1234567890";
 
-    public function newConnection()
+    public function connection()
     {
-        $pdo = new PDO($this->mysqlinfo, $this->username, $this->password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+        try {
+            $pdo = new PDO($this->mysqlinfo, $this->username, $this->password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+        } catch (Exception $e) {
+            echo $e->getMessage() + '\\n';
+        }
         return $pdo;
     }
 
+    // most likely not usable because of inability to bind params, but here incase simple create queries can be used
     public function create($query, $item)
     {
         $pdo = $this->newConnection();

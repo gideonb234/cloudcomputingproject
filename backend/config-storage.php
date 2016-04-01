@@ -32,12 +32,6 @@ class CloudStorage
         return $obj->getMediaLink();
     }
 
-    public function saveImageToDb($mediaLink, $user_id) {
-        $db = new CloudSql();
-        $query = "INSERT INTO Image() VALUES() &&";
-        $db->create($query, $mediaLink);
-    }
-
     public function getFile($image) {
 
     }

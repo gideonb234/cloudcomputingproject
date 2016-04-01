@@ -28,7 +28,6 @@
       </div>
     </div>
 
-    <script src="js/app.js"></script>
     <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
     <script src="assets/js/jquery.filedrop.js"></script>
     <script src="assets/js/script.js"></script>
@@ -37,43 +36,52 @@
   <!-- popup form #1 -->
   <a href="#x" class="overlay" id="login_form"></a>
   <div class="popup">
-    <h2>Welcome Guest!</h2>
-    <p>Please enter your username and password here</p>
-    <div>
-      <label for="username">Login</label>
-      <input type="text" id="username" value="" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" value="" />
-    </div>
-    <input type="submit" value="Log In" />
+    <form id="login_form" action="" method="POST">
+      <h2>Welcome Guest!</h2>
+      <p>Please enter your username and password here</p>
+      <div>
+        <label for="username">Login</label>
+        <input type="text" id="username" value="" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" value="" />
+      </div>
+      <input type="submit" value="Log In" />
+    </form>
     <a class="close" href="#close"></a>
   </div>
 
   <!-- popup form #2 -->
   <a href="#x" class="overlay" id="regform_form"></a>
   <div class="popup">
-    <h2>Welcome!</h2>
-    <p>Please enter your username and password and email here</p>
-    <div>
-      <label for="username">Username</label>
-      <input type="text" id="username" value="" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" value="" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="conifrm_password" value="" />
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" value="" />
-    </div>
-    <input type="button" value="Register" />
+    <form id="register_form" action="" method="POST">
+      <h2>Welcome!</h2>
+      <p>Please enter your username and password and email here</p>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" value="" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" value="" />
+      </div>
+      <div>
+        <input type="password" id="conifrm_password" value="" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" value="" />
+      </div>
+      <input type="submit" value="Register" />
+    </form>
     <a class="close" href="#close"></a>
   </div>
+
+<!-- 
+  onclick="script()"
+  getElementById for all 4 vars
+  POST it to php script?
+-->
 
 </html>
