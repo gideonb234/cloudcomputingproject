@@ -6,6 +6,7 @@
  */
 
 include_once '../error-enable.php';
+include_once 'config-sql.php';
 
 class ImageHandler{
     public function uploadImage() {

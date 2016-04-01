@@ -5,24 +5,28 @@ include_once '../error-enable.php';
 
 class User {
 
-    private $email;
-    private $password;
-    private $name;
-
-    public function login() {
+    public function login($username, $password) {
         // Use bcrypt here (and db connection yes)
+        // save the user id to session
+        // $_SESSION['user_id'] = $id;
+        // $_SESSION['username'] = $username;
     }
 
-    public function register() {
+    public function register($username, $password, $email) {
         // Use bcrypt here (and db connection yes)
+        
     }
 
     public function validatePassword($password) {
-
+        // check hash of password here
+        
+        
     }
 
-    public function getUser($user_id) {
-
+    public function getUser($username) {
+        // username is unique in db, so you can just use this to get the user
+        
+        return $user_id;
     }
 }
 ?>
