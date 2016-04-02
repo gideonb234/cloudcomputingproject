@@ -6,7 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $user->login($username, $password);
-        header("Location:../loggedin.php");
+        header("Location:../loggedIn.php");
     }
     if(isset($_POST['register_form'])) {
         $user = new User();
