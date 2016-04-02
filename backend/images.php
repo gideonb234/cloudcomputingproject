@@ -9,9 +9,23 @@ include_once '../error-enable.php';
 include_once 'config-sql.php';
 
 class ImageHandler{
-    public function uploadImage() {
-        
-    }
+    public function uploadImage($id, $file) {
+        //Gideon check
+        require_once 'config-storage.php';
+        $storagecontroller = new CloudStorage();
+        $result_url = $storagecontroller->storeFile($file);
+
+
+
+        $db = new CloudSql();
+        $query = "INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES('$result_url', '$id')";
+        if($db->create($query, $mediaLink)){
+            //return last insert id
+            return mysqli_insert_id($conn);
+        }   else {
+            return False;
+        }
+}
 
     public function generateLink() {
 
