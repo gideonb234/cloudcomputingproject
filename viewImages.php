@@ -26,7 +26,7 @@
        <!-- if all images arent populated, leave blank.gif so there is no fucking border....... like below.--> 
        
   		<div class="floated_img" style="height:10px; width:10px;">
-   			<a href="link> <img class="resize" src="assets/img/blank.gif" alt="">
+   			<a href="link"> <img class="resize" src="assets/img/blank.gif" alt="">
 		</div> 
         
                  <div class="floated_img" style="height:10px; width:10px;">

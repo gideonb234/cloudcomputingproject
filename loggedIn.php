@@ -14,7 +14,7 @@
       <div class="large-12 columns">
        
         <p><a href="viewImages.php" class="small button">View Images</a><br/>
-        <p><a href="index.php" class="small button">Logout</a><br/>
+        <p><a href="logout.php" class="small button">Logout</a><br/>
    		<h2> Image Uploader <h2>
       </div>
     </div>
@@ -26,9 +26,10 @@
 			<span class="message">
            <div class="browse">
            <!-- uhh hope this works <3 -->
-   			 <h2>Click to Browse Images</h2>
-             <form method="post" enc-type="multipart/form-data">
-   			 <input type="file" name="image" id="image" class="input_text"/>
+   			 <h2>Click to Upload an Image</h2>
+            <form method="post" action="backend/upload.php" enc-type="multipart/form-data">
+   			      <input type="file" name="image" id="image" class="input_text"/>
+            </form>
 			</div>
             </span>
 				</div>
@@ -39,8 +40,6 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-      <!-- upload button, use to upshit up  -->
-        <p><a href="#up?" class="small button">Upload</a><br/>
         </div>
     </div>
 

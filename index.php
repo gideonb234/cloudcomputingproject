@@ -1,5 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
+  <?php
+    if(isset($_SESSION['user_id'])){
+      header("Location:loggedIn.php");
+    }
+  ?>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -27,9 +32,6 @@
            <div class="browse">
            <!-- uhh hope this works <3 -->
    			 <h2>Click to Browse Images</h2>
-             <form enc-type="multipart/form-data">
-   			 <input type="file" name="image" id="myImg"/>
-              </form>
 			</div>
             </span>
 				</div>
