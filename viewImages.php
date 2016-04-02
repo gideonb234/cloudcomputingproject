@@ -115,65 +115,14 @@
                 <div class="floated_img" style="height:10px; width:10px;">
    			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
 				</div>
-                
-                
-                
-                
-                
+                        
           </div>
           
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-      <!-- upload button, use to upshit up  -->
-        <p><a href="#up?" class="small button">Upload</a><br/>
-        </div>
-    </div>
+ 
 
   </body>
-  
-  <!-- popup form #1 -->
-<a href="#x" class="overlay" id="login_form"></a>
-   <div class="popup">
-     <h2>Welcome Guest!</h2>
-     <p>Please enter your login and password here</p>
-   <div>
-   <label for="login">Login</label>
-   <input type="text" id="login" value="" />
-   </div>
-   <div>
-   <label for="password">Password</label>
-   <input type="password" id="password" value="" />
-   </div>
-   <input type="button" value="Log In" />
-   <a class="close" href="#close"></a>
-</div>
 
- <!-- popup form #2 -->
-<a href="#x" class="overlay" id="regform_form"></a>
-   <div class="popup">
-     <h2>Welcome Guest!</h2>
-     <p>Please enter your login and password here</p>
-   <div>
-   <label for="username">Username</label>
-   <input type="text" id="username" value="" />
-   </div>
-   <div>
-   <label for="password">Password</label>
-   <input type="password" id="password" value="" />
-   </div>
-   <div>
-   <label for="password">Password</label>
-   <input type="password" id="password" value="" />
-   </div>
-   <div>
-   <label for="email">Email</label>
-   <input type="email" id="email" value="" />
-   </div>
-   <input type="button" value="Register" />
-   <a class="close" href="#close"></a>
-</div>
-  
 </html>
