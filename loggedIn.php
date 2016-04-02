@@ -13,28 +13,37 @@
     <div class="row">
       <div class="large-12 columns">
        
-        <p><a href="#regform_form" class="small button">Register</a><br/>
-        <p><a href="#login_form" class="small button">Login</a><br/>
+        <p><a href="viewImages.php" class="small button">View Images</a><br/>
+        <p><a href="index.php" class="small button">Logout</a><br/>
    		<h2> Image Uploader <h2>
       </div>
     </div>
 
     <div class="row">
       <div class="large-12 columns">
-        <div class="callout large">
-          <div id="dropbox">
-			<span class="message">Drop images here to upload.</span>
+        <div class="callout large">     
+           <div id="dropbox">
+			<span class="message">
+           <div class="browse">
+           <!-- uhh hope this works <3 -->
+   			 <h2>Click to Browse Images</h2>
+             <form enc-type="multipart/form-data">
+   			 <input type="file" name="image" id="image" class="input_text"/>
+			</div>
+            </span>
 				</div>
           </div>
           
         </div>
       </div>
     </div>
-    
-    <script src="js/app.js"></script>
-    <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-    <script src="assets/js/jquery.filedrop.js"></script>
-    <script src="assets/js/script.js"></script>
+    <div class="row">
+      <div class="large-12 columns">
+      <!-- upload button, use to upshit up  -->
+        <p><a href="#up?" class="small button">Upload</a><br/>
+        </div>
+    </div>
+
   </body>
   
   <!-- popup form #1 -->

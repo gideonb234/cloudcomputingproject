@@ -38,8 +38,10 @@ h1, h2, h3, h4, h5, h6 {
  	 margin-bottom: 14px; 
 	 margin-top: 14px; }
 h2 { font-size: 27px;
-align-content: left;
-width: auto;}
+	 align-content: left;
+	 width: auto;
+   } 
+
 
 body {
   padding: 0;
@@ -69,7 +71,7 @@ body {
   .row::after {
     clear: both; }
   
-  @media screen and (min-width: 40em) {
+   {
     .column, .columns {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -85,8 +87,9 @@ body {
  	 text-rendering: optimizeLegibility;
  	 float: right;
 	  }
+	  
 
-  @media screen and (min-width: 0\0) {
+   {
     select {
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg=="); } }
 
@@ -111,7 +114,8 @@ body {
     color: #990000; }
   
   .button.small {
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+	 }
 
 .callout {
   margin: 0 0 1rem 0
