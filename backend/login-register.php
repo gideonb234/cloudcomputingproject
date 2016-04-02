@@ -6,7 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $user->login($username, $password);
-        header("Location:../index.php");
+        header("Location:../loggedin.php");
     }
     if(isset($_POST['register_form'])) {
         $user = new User();
@@ -16,6 +16,6 @@
         $email = $_POST['email'];
         $user->register($username, $password, 
             $confirm_password, $email);
-        echo "cloud connection";
+        header("Location:../index.php");
     }
 ?>
