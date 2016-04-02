@@ -28,7 +28,7 @@
            <!-- uhh hope this works <3 -->
    			 <h2>Click to Browse Images</h2>
              <form enc-type="multipart/form-data">
-   			 <input type="file" name="image" id="image" class="input_text"/>
+   			 <input type="file" name="image" id="myImg"/>
 			</div>
             </span>
 				</div>
