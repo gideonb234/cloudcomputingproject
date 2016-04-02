@@ -7,25 +7,22 @@
 
 include_once '../error-enable.php';
 include_once 'config-sql.php';
+include_once 'config-storage.php';
 
 class ImageHandler{
-    public function uploadImage($id, $file) {
-        //Gideon check
-        require_once 'config-storage.php';
+    public function uploadImage($file, $id) {
         $storagecontroller = new CloudStorage();
         $result_url = $storagecontroller->storeFile($file);
-
-
-
-        $db = new CloudSql();
-        $query = "INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES('$result_url', '$id')";
-        if($db->create($query, $mediaLink)){
-            //return last insert id
-            return mysqli_insert_id($conn);
-        }   else {
-            return False;
-        }
-}
+        // $db = new CloudSql();
+        // $conn = $db->connection();
+        // try {
+        //     $stmt = "INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES(':image_path', ':uid')";
+        //     $stmt->bindValue(':image_path', $result_url);
+        //     $stmt->bindValue(':uid', $_SESSION['user_id']);
+        // } catch (PDOException $e) {
+        //     echo $e->getMessage() + '\\n';
+        // }
+    }
 
     public function generateLink() {
 
@@ -37,14 +34,17 @@ class ImageHandler{
         $db->create($query, $mediaLink);
     }
 
-    public function getImage($id)
+    public function getImage($url)
     {
-        $pdo = CloudSql->$this->newConnection();
-        $statement = $pdo->prepare('SELECT * FROM Image WHERE image_id = :id');
-        $statement->bindValue('id', $id, PDO::PARAM_INT);
-        $statement->execute();
-
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        try {
+            $pdo = CloudSql->newConnection();
+            $statement = $pdo->prepare('SELECT * FROM Image WHERE image_filepath = :image_path');
+            $statement->bindValue(':image_path', $url);
+            $statement->execute();
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage() + '\\n';
+        }
     }
 
     // todo: fix this
@@ -57,6 +57,7 @@ class ImageHandler{
                 ' LIMIT :limit';
             $statement = $pdo->prepare($query);
             $statement->bindValue(':cursor', $cursor, PDO::PARAM_INT);
+            $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
         } else {
             $query = 'SELECT * FROM image ORDER BY image_id LIMIT :limit';
             $statement = $pdo->prepare($query);
@@ -74,7 +75,6 @@ class ImageHandler{
             array_push($rows, $row);
             $last_row = $row;
         }
-
         return array(
             'Image' => $rows,
             'cursor' => $new_cursor,

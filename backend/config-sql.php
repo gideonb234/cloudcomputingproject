@@ -15,7 +15,7 @@ class CloudSql
         try {
             $pdo = new PDO($this->mysqlinfo, $this->username, $this->password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage() + '\\n';
         }
         return $pdo;
