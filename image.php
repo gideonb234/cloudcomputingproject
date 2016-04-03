@@ -7,8 +7,12 @@
   }
   if (isset($_SESSION['last_image_id'])){
     $image_id = $_SESSION['last_image_id'];
-  } else {
-
+    $imgcon = new ImageHandler();
+    $img = $imgcon->getImage($image_id);
+  } else if(isset($_GET['image_id'])) {
+    $image_id = $_GET['last_image_id'];
+    $imgcon = new ImageHandler();
+    $img = $imgcon->getImage($image_id);
   }
 ?>
   <head>
