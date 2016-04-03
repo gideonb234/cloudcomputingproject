@@ -26,7 +26,7 @@ if (isset($_POST["image"])) {
     		 	echo "Failed to upload to Google.";
     		 }
     	} else {
-    		echo "File is not in correct image format. Kill yourself in a formal manner.";
+    		echo "File is not in correct image format.";
     	}
 
 	}

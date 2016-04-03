@@ -41,7 +41,7 @@ class CloudStorage
             'uploadType' => 'media',
             'name' => $file,
         ));
-        echo $obj->getMediaLink(); die();
+        echo $obj->getMediaLink(); 
     }
 
     public function getFile($image) {

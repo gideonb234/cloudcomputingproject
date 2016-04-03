@@ -16,14 +16,13 @@ class ImageHandler{
         $db = new CloudSql();
         $conn = $db->connection();
         $encoded_url = $conn->quote($result_url);
-        echo $result_url; echo '\n'; echo $id;
         try {
             $stmt = $conn->prepare("INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES(:image_path, :uid)");
-            $stmt->bindParam(':image_path', $result_url, PDO::PARAM_STR);
+            $stmt->bindParam(':image_path', $encoded_url, PDO::PARAM_STR);
             $stmt->bindParam(':uid', $_SESSION['user_id'], PDO::PARAM_INT);
             $stmt->execute();
-            $db = null;
             return $conn->lastInsertId();
+            $db = null;
         } catch (PDOException $e) {
             var_dump($e);
             die();
