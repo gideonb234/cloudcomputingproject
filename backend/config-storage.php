@@ -16,21 +16,17 @@ class CloudStorage
         return new Google_Service_Storage($client);
     }
 
-
-    //Deleted $contenttype
     public function storeFile($file)
     {
-        $localFile = "upload/".$file;
+        $localFile = "../upload/".$file;
+        $client = $this->initClient();
         $obj = new Google_Service_Storage_StorageObject();
-        // Generate a unique file name so we don't try to write to files to
-        // the same name.
-        
-        //$name = uniqid('', true);
+        $bucketName = 'cloud-computing-storage';
         $obj->setName($file);
-        $obj = $this->service->objects->insert($this->bucketName, $obj, array(
+        $obj = $client->objects->insert($bucketName, $obj, array(
             'data' => file_get_contents($localFile),
             'uploadType' => 'media',
-            'name' => $name,
+            'name' => $file,
             'predefinedAcl' => 'publicread',
         ));
         return $obj->getMediaLink();
