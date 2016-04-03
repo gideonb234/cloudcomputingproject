@@ -6,6 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $id = $user->login($username, $password);
+	session_start();
         $_SESSION['user_id'] = $id;
         header("Location:../loggedIn.php");
     }
