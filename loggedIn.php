@@ -45,7 +45,7 @@
       <div class="large-12 columns">
         </div>
     </div>
-  <form method="post" action="backend/upload.php" enc-type="multipart/form-data">
+  <form method="post" action="backend/upload.php" enctype="multipart/form-data">
     <input type="file" name="user_image" id="image" class="input_text"/>
     <input type="submit" name="image" value="Submit">
   </form>
