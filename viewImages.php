@@ -21,7 +21,7 @@
        
         <p><a href="viewImages.php" class="small button">View Images</a><br/>
         <p><a href="logout.php" class="small button">Logout</a><br/>
-   		<a href="index.php" style="text-decoration:none; color:inherit;"</a><h2> Image Uploader <h2>
+      <a href="index.php" style="text-decoration:none; color:inherit;"</a><h2> Image Uploader <h2>
       </div>
     </div>
     <div class="row">
