@@ -22,7 +22,7 @@
        
         <p><a href="viewImages.php" class="small button">View Images</a><br/>
         <p><a href="index.php" class="small button">Logout</a><br/>
-   		<h2> Image Uploader <h2>
+   		<a href="index.php" <h2> Image Uploader <h2></a>
       </div>
     </div>
     <div class="row">

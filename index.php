@@ -21,7 +21,7 @@
        
         <p><a href="#regform_form" class="small button">Register</a><br/>
         <p><a href="#login_form" class="small button">Login</a><br/>
-        <h2> Image Uploader <h2>
+        <a href="index.php" <h2> Image Uploader <h2></a>
       </div>
     </div>
 
