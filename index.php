@@ -26,10 +26,10 @@
     </div>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-12 columns">	
         <div class="callout large">     
           <div id="imagebox">
-       
+       <h2><style="text-align:centre;"> Sign in to start uploading!</h2>
        <!-- if all images arent populated, leave blank.gif so there is no fucking border....... like below.--> 
        
        <?php
