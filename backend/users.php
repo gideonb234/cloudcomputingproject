@@ -15,7 +15,7 @@ class User {
             $query->execute(array(':uname'=>$username));
             $userRow=$query->fetch(PDO::FETCH_ASSOC);
             if($query->rowCount() > 0) {
-                if(sha1($password, $userRow['password'])) {
+                if(sha1($password === $userRow['password'])) {
                     $_SESSION['user_id'] = $userRow['user_id'];
                     return $userRow['user_id'];
                 } else {
