@@ -5,6 +5,7 @@
   if (!isset($_SESSION['user_id'])) {
     header("Location:index.php");
   }
+  $image_id = $_SESSION['last_image_id'];
 ?>
   <head>
     <meta charset="utf-8" />
@@ -28,7 +29,7 @@
       <div class="large-12 columns">
         <div class="callout large">     
            <div id="singleimagebox">
-			<img src="http://goo.gl/ytbJn8" 
+			<img src="<?php echo $last_image_id;?>" 
 				style="width: auto; height: auto;max-width: 720px;max-height: auto">
            </div>
         </div>

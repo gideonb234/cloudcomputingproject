@@ -18,8 +18,9 @@ if (isset($_POST["image"])) {
                 echo $result;
                 echo "success";
     		 	unlink($savedirectory); 
-    		 	//$_GET['image_id']
-    		 	// header('Location: image.php?image_id=$result' );
+    		 	session_start();
+                $_SESSION['last_image_id'] = $result;
+    		 	header('Location: image.php?image_id=$result');
     		 	//image.php is whatever the image page is
     		 } else {
     		 	unlink($savedirectory); 
