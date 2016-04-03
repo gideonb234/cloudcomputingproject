@@ -70,7 +70,7 @@ class ImageHandler{
             $statement->execute();
         } catch (PDOException $e) {
             var_dump($e);
-            die();
+            die(); echo "die";
         }
     }
 

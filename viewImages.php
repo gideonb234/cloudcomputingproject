@@ -46,9 +46,9 @@
           $count--;
         } 
         for ($i=0; $i < $count; $i++) { 
-          <div class="floated_img" style="height:10px; width:10px;">
+          echo '<div class="floated_img" style="height:10px; width:10px;">
             <a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-        </div>
+        </div>';
         }
        ?>               
           </div>
