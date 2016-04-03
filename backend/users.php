@@ -60,10 +60,10 @@ class User {
         return true;
     }
 
-    public function getUser($username) {
+    public function getUser($user_id) {
         // username is unique in db, so you can just use this to get the user
         
-        return $user_id;
+        return $username;
     }
 }
 ?>

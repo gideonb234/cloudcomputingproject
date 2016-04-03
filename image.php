@@ -5,7 +5,11 @@
   if (!isset($_SESSION['user_id'])) {
     header("Location:index.php");
   }
-  $image_id = $_SESSION['last_image_id'];
+  if (isset($_SESSION['last_image_id'])){
+    $image_id = $_SESSION['last_image_id'];
+  } else {
+
+  }
 ?>
   <head>
     <meta charset="utf-8" />
@@ -29,6 +33,7 @@
       <div class="large-12 columns">
         <div class="callout large">     
            <div id="singleimagebox">
+           <!-- image crap goes here, i'll do a get thing or whatever -->
 			<img src="<?php echo $last_image_id;?>" 
 				style="width: auto; height: auto;max-width: 720px;max-height: auto">
            </div>
