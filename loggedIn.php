@@ -33,7 +33,8 @@
            <!-- uhh hope this works <3 -->
    			 <h2>Click to Upload an Image</h2>
             <form method="post" action="backend/upload.php" enc-type="multipart/form-data">
-   			      <input type="file" name="image" id="image" class="input_text"/>
+   			      <input type="file" name="user_image" id="image" class="input_text"/>
+              <input type="submit" name="image" value="Submit">
             </form>
 			</div>
             </span>

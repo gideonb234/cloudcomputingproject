@@ -2,7 +2,7 @@
 include_once('images.php');
 $id = $_SESSION['userid'];
 
-if (isset($_POST["image"])) {
+if (isset($_POST["user_image"])) {
 
 	if (!empty($_FILES['image'])){
 	    
