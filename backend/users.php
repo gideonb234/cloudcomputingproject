@@ -15,9 +15,9 @@ class User {
             $query->execute(array(':uname'=>$username));
             $userRow=$query->fetch(PDO::FETCH_ASSOC);
             if($query->rowCount() > 0) {
-                if(password_verify($password, $userRow['password'])) {
+                if(sha1($password, $userRow['password'])) {
                     $_SESSION['user_id'] = $userRow['user_id'];
-                    return true;
+                    return $userRow['user_id'];
                 } else {
                     return false;
                 }
@@ -33,7 +33,7 @@ class User {
         printf("hi");
         try {
             if($password === $confirm_password) {
-                $new_password = password_hash($password, PASSWORD_DEFAULT);
+                $new_password = sha1($password, PASSWORD_DEFAULT);
             }
             $stmt = $conn->prepare("INSERT INTO User (username,email,password) VALUES(:uname, :umail, :upass)");
               

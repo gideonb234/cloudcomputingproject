@@ -5,7 +5,8 @@
 	$user = new User();
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $user->login($username, $password);
+        $id = $user->login($username, $password);
+        $_SESSION['user_id'] = $id;
         header("Location:../loggedIn.php");
     }
     if(isset($_POST['register_form'])) {
