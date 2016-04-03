@@ -45,7 +45,7 @@
    			 <input type="file" name="user_image" id="image" class="input_text" onchange="readURL(this);"/>
  		   </form>
            		</div>
-                <img style="width:720px; height:auto;" class="imageSingleResize" id="imagePort" src="#"/>
+                <img style="width:720px; height:auto;" class="imageSingleResize hide" id="imagePort" src="#"/>
            
 			</div>
           </div>
@@ -61,15 +61,11 @@
   </body>
   
   <script>
-  $(document).ready(function(){
-    var img = document.getElementById('imagePort');
-    img.classList.add('hidden');
-  });
   function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             var img = document.getElementById('imagePort');
-            img.classList.remove('hidden');
+            img.classList.remove('hide');
             reader.onload = function (e) {
                 $('#imagePort')
                     .attr('src', e.target.result)
