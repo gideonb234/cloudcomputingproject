@@ -11,16 +11,17 @@ class User {
         try {
 	        $db = new CloudSql;
             $conn = $db->connection();
-            $query = $conn->prepare("SELECT * FROM User WHERE username=:uname LIMIT 1");
-            $query->execute(array(':uname'=>$username));
+            $enc_pass = sha1($password);
+            $query = $conn->prepare("SELECT * FROM User WHERE username=:uname AND password=:password LIMIT 1");
+            $query->bindParam(':uname', $username);
+            $query->bindParam(':password', $password);
+            $query->execute();
             $userRow=$query->fetch(PDO::FETCH_ASSOC);
             if($query->rowCount() > 0) {
-                if(sha1($password === $userRow['password'])) {
-                    $_SESSION['user_id'] = $userRow['user_id'];
-                    return $userRow['user_id'];
-                } else {
-                    return false;
-                }
+                $_SESSION['user_id'] = $userRow['user_id'];
+                return $userRow['user_id'];
+            } else {
+                return false;
             }
         } catch(PDOException $e) {
            echo $e->getMessage();
