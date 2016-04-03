@@ -25,7 +25,7 @@
       <div class="large-12 columns">	
         <div class="callout large">     
           <div id="imagebox">
-       <h2 style="text-align:centre">Sign in to start uploading!</h2>
+       <h2 style="text-align:centre">Gallery</h2>
        
        <?php
         require_once('backend/images.php');
