@@ -15,7 +15,8 @@ if (isset($_POST["image"])) {
     		$imagecontroller = new ImageHandler;
     		$result = $imagecontroller->UploadImage($file, $id); 
     		if($result != False){
-               echo $result;
+                echo $result;
+                echo "success";
     		 	unlink($savedirectory); 
     		 	//$_GET['image_id']
     		 	// header('Location: image.php?image_id=$result' );
