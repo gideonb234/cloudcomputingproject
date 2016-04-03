@@ -21,13 +21,15 @@
 
     <div class="row">
       <div class="large-12 columns">
-        <?if(isset($_SESSION['user_id'])){
+        <?
+        if(isset($_SESSION['user_id'])){
         echo'<p><a href="viewImages.php" class="small button">View Images</a><br/></p>
         <p><a href="logout.php" class="small button">Logout</a><br/></p>';
       } else {
         echo'<p><a href="#regform_form" class="small button">Register</a><br/>
         <p><a href="#login_form" class="small button">Login</a><br/>';
       }
+      ?>
    		<a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>
