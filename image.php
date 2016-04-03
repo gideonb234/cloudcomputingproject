@@ -38,7 +38,25 @@
       <div class="large-12 columns">
         <div class="callout large">     
            <div id="commentbox">
+			<table>
+	<thead>
+		<tr>
+			<th><h1>Leave a comment!</h1></th>
 			
+				</tr>
+			</thead>
+				<tbody>
+				<tr>
+					<td><h3>ssss</h3></td>
+				</tr>   
+					<tr>
+						<td><h3>ssss</h3></td>
+					</tr>
+					<tr>
+						<td><h3>ssss</h3></td>
+					</tr>
+				</tbody>
+			</table>
             <form action="/html/tags/html_form_tag_action.cfm" method="post">
 			<div>
 			<textarea class="txtarea" name="comments" id="comments" 
@@ -48,9 +66,7 @@
 			</form>          
            </div>
         </div>
-      </div>
-      
-      
+      </div>    
     </div>
   </body>
 </html>
