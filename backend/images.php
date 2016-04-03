@@ -37,8 +37,9 @@ class ImageHandler{
     public function getImage($url)
     {
         try {
-            $pdo = CloudSql->newConnection();
-            $statement = $pdo->prepare('SELECT * FROM Image WHERE image_filepath = :image_path');
+            $db = new CloudSql();
+            $conn = $db->newConnection();
+            $statement = $conn->prepare('SELECT * FROM Image WHERE image_filepath = :image_path');
             $statement->bindValue(':image_path', $url);
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);
@@ -51,7 +52,8 @@ class ImageHandler{
 
     public function listImages($listLimit = 10, $cursor = null)
     {
-        $pdo = CloudSql->$this->newConnection();
+        $db = new CloudSql();
+        $pdo = $db->newConnection();
         if ($cursor) {
             $query = 'SELECT * FROM Image WHERE image_id > :cursor ORDER BY image_id' .
                 ' LIMIT :limit';

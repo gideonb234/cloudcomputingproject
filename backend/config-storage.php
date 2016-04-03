@@ -1,6 +1,6 @@
 <?php
 
-require_once './error-enable.php';
+require_once '../error-enable.php';
 require_once 'config-sql.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -16,21 +16,30 @@ class CloudStorage
         return new Google_Service_Storage($client);
     }
 
-
-    //Deleted $contenttype
     public function storeFile($file)
     {
-        $localFile = "upload/".$file;
+        $localFile = "../upload/".$file;
+        $client = $this->initClient();
         $obj = new Google_Service_Storage_StorageObject();
-        // Generate a unique file name so we don't try to write to files to
-        // the same name.
-        
-        //$name = uniqid('', true);
+        $bucketName = 'cloud-computing-storage';
         $obj->setName($file);
-        $obj = $this->service->objects->insert($this->bucketName, $obj, array(
-            'data' => file_get_contents($localFile);
+        // this access control is for project owners
+        $ownerAccess = new Google_Service_Storage_ObjectAccessControl();
+        $ownerAccess->setEntity('project-owners-' . $projectId);
+        $ownerAccess->setRole('OWNER');
+
+        // this access control is for public access
+        $readerAccess = new Google_Service_Storage_ObjectAccessControl();
+        $readerAccess->setEntity('allUsers');
+        $readerAccess->setRole('READER');
+
+        $obj = new Google_Service_Storage_StorageObject();
+        $obj->setName($filename);
+        $obj->setAcl([$ownerAccess, $readerAccess]);
+        $obj = $client->objects->insert($bucketName, $obj, array(
+            'data' => file_get_contents($localFile),
             'uploadType' => 'media',
-            'name' => $name,
+            'name' => $file,
             'predefinedAcl' => 'publicread',
         ));
         return $obj->getMediaLink();
