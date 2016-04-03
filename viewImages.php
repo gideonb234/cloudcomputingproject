@@ -31,102 +31,26 @@
        
        <!-- if all images arent populated, leave blank.gif so there is no fucking border....... like below.--> 
        
-  		<div class="floated_img" style="height:10px; width:10px;">
-   			<a href="link"> <img class="resize" src="assets/img/blank.gif" alt="">
-		</div> 
        <?php
         require_once('backend/images.php');
         $images = new ImageHandler();
-        $listOfImages = $images->listImages($_SESSION['user_id']);
-        print_r($listOfImages);
-       ?> 
-                 <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div><div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                <div class="floated_img" style="height:10px; width:10px;">
-   			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
-				</div>
-                        
+        $uid = $_SESSION['user_id'];
+        $listOfImages = $images->listImages($uid);
+        $count = 20;
+        foreach($listOfImages as $image){
+          $string = 'https://storage.googleapis.com/cloud-computing-storage/'.$image[image_filepath];
+          echo '
+          <div class="floated_img" style="height:10px; width:10px;">
+            <a href="http://goo.gl/ytbJn8"><img class="resize" src="'.$string.'" alt="img">
+        </div>';
+          $count--;
+        } 
+        for ($i=0; $i < $count; $i++) { 
+          <div class="floated_img" style="height:10px; width:10px;">
+            <a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
+        </div>
+        }
+       ?>               
           </div>
           
         </div>

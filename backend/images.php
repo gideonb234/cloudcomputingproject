@@ -49,10 +49,10 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $pdo = $db->connection();
-            $statement = $pdo->prepare("SELECT * FROM Image WHERE `image_user_fk` = :user ORDER BY image_id LIMIT 10");
+            $statement = $pdo->prepare("SELECT * FROM Image WHERE `image_user_fk` = :user ORDER BY image_id DESC LIMIT 20");
             $statement->bindParam(':user', $user_id, PDO::PARAM_INT);
             $statement->execute();
-            return $statement->fetch(PDO::FETCH_ASSOC);
+            return $statement->fetchAll();
         } catch (PDOException $e) {
             var_dump($e);
             die();
