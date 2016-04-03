@@ -63,7 +63,7 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $conn = $db->connection();
-            $statement = $conn->prepare("INSERT INTO Comment (`comment_image_fk`, `comment_user_fk`, `comment_text`) VALUES (:image_id, :user_id, :comment_text");
+            $statement = $conn->prepare("INSERT INTO Comment (`comment_image_fk`, `comment_user_fk`, `comment_text`) VALUES (:image_id, :user_id, :comment_text)");
             $statement->bindParam(':image_id', $image_id);
             $statement->bindParam(':user_id', $user_id);
             $statement->bindParam(':comment_text', $comment);
@@ -82,7 +82,7 @@ class ImageHandler{
             $stmt = $conn->prepare("SELECT * FROM Comment WHERE `comment_image_fk` = :image_id");
             $stmt->bindParam(':image_id', $image_id);
             $stmt->execute();
-            return $statement->fetchAll();
+            return $stmt->fetchAll();
         } catch (PDOException $e) {
             var_dump($e);
             die();

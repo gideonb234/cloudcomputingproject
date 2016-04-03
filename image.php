@@ -8,7 +8,7 @@
   }
   if(isset($_POST['comment'])) {
     $comment = new ImageHandler();
-    $comment->createComment($_POST['comment'],$_GET['image_id'],$_SESSION['user_id']);
+    $comment->createComment($_POST['comment_text'],$_GET['image_id'],$_SESSION['user_id']);
     echo "success";
   }
 ?>
@@ -68,7 +68,7 @@
           foreach ($listOfComments as $com) {
             echo "<tr>
             <td><h3>".$com[comment_text]."</h3></td>
-          </tr>"
+          </tr>";
           }
         }
         ?>
@@ -81,7 +81,7 @@
 			<div>
 		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
 			</div>
-			<input class="small button" name="comment"type="submit" value="Submit">
+			<input class="small button" name="comment" type="submit" value="Submit">
 			</form>          
            </div>
         </div>

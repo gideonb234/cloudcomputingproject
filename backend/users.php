@@ -56,7 +56,7 @@ class User {
 
     public function logout() {
         session_destroy();
-        unset($_SESSION['user_session']);
+        unset($_SESSION['user_id']);
         return true;
     }
 
