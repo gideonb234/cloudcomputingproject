@@ -21,9 +21,13 @@
 
     <div class="row">
       <div class="large-12 columns">
-       
-        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
-        <p><a href="logout.php" class="small button">Logout</a><br/></p>
+        <?if(isset($_SESSION['user_id'])){
+        echo'<p><a href="viewImages.php" class="small button">View Images</a><br/></p>
+        <p><a href="logout.php" class="small button">Logout</a><br/></p>';
+      } else {
+        echo'<p><a href="#regform_form" class="small button">Register</a><br/>
+        <p><a href="#login_form" class="small button">Login</a><br/>';
+      }
    		<a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>
@@ -82,11 +86,57 @@
       } else {
         echo '<h2>You must be logged in to leave comments</h2>';
       }
+      ?>
            </div>
         </div>
       </div>    
     </div>
   </body>
+   <!-- popup form #1 -->
+  <a href="#x" class="overlay" id="login_form"></a>
+  <div class="popup">
+    <form name="login_form" action="backend/login-register.php" method="POST">
+      <h2>Welcome Guest!</h2>
+      <p>Please enter your username and password here</p>
+      <div>
+        <label for="username">Login</label>
+        <input type="text" name="username" id="username" value="" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="" />
+      </div>
+      <button class="small button" type="submit" name="login_form"/>Log In</button>
+    </form>
+    <a class="close" href="#close"></a>
+  </div>
+
+  <!-- popup form #2 -->
+  <a href="#x" class="overlay" id="regform_form"></a>
+  <div class="popup">
+    <form name="register_form" action="backend/login-register.php" method="POST">
+      <h2>Welcome!</h2>
+      <p>Please enter your username and password and email here</p>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value="" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="" />
+      </div>
+      <div>
+        <label for="confirm_password">Confirm</label>
+        <input type="password" name="confirm_password" id="conifrm_password" value="" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="" />
+      </div>
+      <button class="small button" type="submit" name="register_form"/>Register</button>
+    </form>
+    <a class="close" href="#close"></a>
+  </div>
 </html>
 <script>
 function setBackgroundColour(color)
