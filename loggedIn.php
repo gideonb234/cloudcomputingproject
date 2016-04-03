@@ -46,10 +46,6 @@
        
         </div>
     </div>
-  <form method="post" action="backend/upload.php" enctype="multipart/form-data">
-    <input type="file" name="user_image" id="image" class="input_text"/>
-    <input type="submit" name="image" value="Submit">
-  </form>
   </body>
   
   <!-- popup form #1 -->
