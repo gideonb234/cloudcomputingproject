@@ -1,6 +1,6 @@
 <?php
 
-require_once './error-enable.php';
+require_once '../error-enable.php';
 require_once 'config-sql.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -28,7 +28,7 @@ class CloudStorage
         //$name = uniqid('', true);
         $obj->setName($file);
         $obj = $this->service->objects->insert($this->bucketName, $obj, array(
-            'data' => file_get_contents($localFile);
+            'data' => file_get_contents($localFile),
             'uploadType' => 'media',
             'name' => $name,
             'predefinedAcl' => 'publicread',
