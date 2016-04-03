@@ -37,6 +37,26 @@ a:hover{
 	Dropbox Element
 --------------------------*/
 
+#commentbox{
+		
+	border-radius:3px;
+	position: centre;
+	align-content:center;
+	min-height: auto;
+	overflow: hidden;
+	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);
+}
+
+.txtarea{
+    BORDER-RIGHT: #646464 ;
+    BORDER-TOP: #646464;    
+    BORDER-LEFT: #646464;
+    BORDER-BOTTOM: #646464;
+    width:100%;
+    BACKGROUND: #ffffcc;    
+}
+
+
 #imagebox{
 	background:url('../img/background_tile_3.jpg');
 	border-radius:3px;

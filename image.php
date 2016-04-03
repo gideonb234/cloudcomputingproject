@@ -33,6 +33,24 @@
            </div>
         </div>
       </div>
+      
+      
+      <div class="large-12 columns">
+        <div class="callout large">     
+           <div id="commentbox">
+			
+            <form action="/html/tags/html_form_tag_action.cfm" method="post">
+			<div>
+			<textarea class="txtarea" name="comments" id="comments" 
+            style="font-family:sans-serif;font-size:1.2em;height:50px;"> </textarea>
+			</div>
+			<input type="submit" value="Submit">
+			</form>          
+           </div>
+        </div>
+      </div>
+      
+      
     </div>
   </body>
 </html>

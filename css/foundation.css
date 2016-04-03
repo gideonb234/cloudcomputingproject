@@ -54,7 +54,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-
 .row {
   max-width: 45rem;
   margin-left: auto;
@@ -92,7 +91,7 @@ body {
    {
     select {
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg=="); } }
-
+	  
 .button {
   display: inline-block;
   text-align: center;
@@ -117,13 +116,13 @@ body {
     font-size: 0.75rem;
 	padding-top: 5 }
 
-.callout {
-  margin: 0 0 1rem 0
-  border: 1px solid rgba(10, 10, 10, 0.25);
-  border-radius: 0;
-  position: relative;
-  color: #0a0a0a;
-  }
+	.callout {
+ 	 margin: 0 0 1rem 0
+	  border: 1px solid rgba(10, 10, 10, 0.25);
+ 	 border-radius: 0;
+ 	 position: relative;
+ 	 color: #0a0a0a;
+ 	 }
   
   
 /* lightbox */
@@ -149,6 +148,7 @@ body {
 .overlay:target {
     visibility: visible;
     opacity: 1;
+	
 }
 .popup {
     background:url('../img/background_tile_3.jpg');
