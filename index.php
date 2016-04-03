@@ -21,18 +21,22 @@
        
         <p><a href="#regform_form" class="small button">Register</a><br/>
         <p><a href="#login_form" class="small button">Login</a><br/>
-   		<h2> Image Uploader <h2>
+        <h2> Image Uploader <h2>
       </div>
     </div>
 
     <div class="row">
       <div class="large-12 columns">
         <div class="callout large">     
-           <div id="dropbox">
+          <div id="dropbox">
 			<span class="message">
            <div class="browse">
            <!-- uhh hope this works <3 -->
-   			 <h2>Click to Browse Images</h2>
+   			 <h2>Click to Upload an Image</h2>
+            <form method="post" action="backend/upload.php" enc-type="multipart/form-data">
+   			      <input type="file" name="user_image" id="image" class="input_text"/>
+              <input type="submit" name="image" value="Submit">
+            </form>
 			</div>
             </span>
 				</div>
@@ -43,7 +47,7 @@
     <div class="row">
       
       <!-- upload button, use to upshit up  -->
-        <p><a href="#up?" class="button">Upload</a><br/>
+      <!-- <p><a href="#up?" class="button">Upload</a><br/> --> 
        
     </div>
   </body>
