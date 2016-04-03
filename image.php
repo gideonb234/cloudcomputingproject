@@ -20,9 +20,9 @@
     <div class="row">
       <div class="large-12 columns">
        
-        <p><a href="viewImages.php" class="small button">View Images</a><br/>
-        <p><a href="index.php" class="small button">Logout</a><br/>
-   		<a href="index.php" style="text-decoration:none; color:inherit;"</a><h2> Image Uploader <h2>
+        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
+        <p><a href="logout.php" class="small button">Logout</a><br/></p>
+   		<a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>
     <div class="row">
@@ -36,9 +36,8 @@
           $imgcon = new ImageHandler();
           $img = $imgcon->getImage($image_id);
           print_r($img);
-          $string = 'https://storage.googleapis.com/cloud_computing_storage/'.$img->image_filepath;
-          echo'<img src="'.$string.'" 
-        style="width: auto; height: auto;max-width: 720px;max-height: auto">'
+          $string = 'https:/\/storage.googleapis.com/cloud_computing_storage/'.$img->image_filepath;
+          echo'<img src="'.$string.'"style="width: auto; height: auto;max-width: 720px;max-height: auto">';
         }
         ?>
            </div>

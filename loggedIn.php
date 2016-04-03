@@ -19,9 +19,9 @@
     <div class="row">
       <div class="large-12 columns">
        
-        <p><a href="viewImages.php" class="small button">View Images</a><br/>
-        <p><a href="logout.php" class="small button">Logout</a><br/>
-   		<a href="index.php" style="text-decoration:none; color:inherit;"</a><h2> Image Uploader <h2>
+        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
+        <p><a href="logout.php" class="small button">Logout</a><br/></p>
+   		<a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>
 
