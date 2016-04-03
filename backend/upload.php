@@ -2,17 +2,17 @@
 include_once('images.php');
 $id = $_SESSION['userid'];
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["image"])) {
 
-	if (!empty($_FILES['uimage'])){
+	if (!empty($_FILES['image'])){
 	    
-	    $fileType = $_FILES["uimage"]["type"]; 
+	    $fileType = $_FILES["image"]["type"]; 
 	    if (($fileType == "image/gif") || ($fileType == "image/jpeg") ||
     	($fileType == "image/jpg") || ($fileType == "image/png")) {
     		//Replaces spaces in the name of the file with _ 
     		$file = preg_replace('/\s+/', '_', basename( $_FILES['uimage']['name']));
     		$savedirectory = "upload/".$file;
-    		move_uploaded_file($_FILES["uimage"]["tmp_name"], $savedirectory);
+    		move_uploaded_file($_FILES["image"]["tmp_name"], $savedirectory);
     		// $imagecontroller = new ImageHandler;
     		// $result = $imagecontroller->UploadImage($id, $file); 
     	// 	if($result != False){
