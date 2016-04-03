@@ -14,17 +14,16 @@ if (isset($_POST["image"])) {
     		move_uploaded_file($_FILES["user_image"]["tmp_name"], $savedirectory);
     		$imagecontroller = new ImageHandler;
     		$result = $imagecontroller->UploadImage($file, $id); 
-            echo $result;
-    		// if($result != False){
-      //           echo "success";
-    		// 	unlink($savedirectory); 
-    		// 	//$_GET['image_id']
-    		// 	// header('Location: image.php?image_id=$result' );
-    		// 	//image.php is whatever the image page is
-    		// } else {
-    		// 	unlink($savedirectory); 
-    		// 	echo "Failed to upload to Google.";
-    		// }
+    		if($result != False){
+               echo $result;
+    		 	unlink($savedirectory); 
+    		 	//$_GET['image_id']
+    		 	// header('Location: image.php?image_id=$result' );
+    		 	//image.php is whatever the image page is
+    		 } else {
+    		 	unlink($savedirectory); 
+    		 	echo "Failed to upload to Google.";
+    		 }
     	} else {
     		echo "File is not in correct image format. Kill yourself in a formal manner.";
     	}

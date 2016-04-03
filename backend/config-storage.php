@@ -25,7 +25,7 @@ class CloudStorage
         $obj->setName($file);
         // this access control is for project owners
         $ownerAccess = new Google_Service_Storage_ObjectAccessControl();
-        $ownerAccess->setEntity('project-owners-' . $projectId);
+        $ownerAccess->setEntity('project-owners-' . $this->google_project_id);
         $ownerAccess->setRole('OWNER');
 
         // this access control is for public access
@@ -34,13 +34,12 @@ class CloudStorage
         $readerAccess->setRole('READER');
 
         $obj = new Google_Service_Storage_StorageObject();
-        $obj->setName($filename);
+        $obj->setName($file);
         $obj->setAcl([$ownerAccess, $readerAccess]);
         $obj = $client->objects->insert($bucketName, $obj, array(
             'data' => file_get_contents($localFile),
             'uploadType' => 'media',
             'name' => $file,
-            'predefinedAcl' => 'publicread',
         ));
         return $obj->getMediaLink();
     }
