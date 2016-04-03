@@ -33,6 +33,45 @@
            </div>
         </div>
       </div>
+      
+      
+      <div class="large-12 columns">
+        <div class="callout large">     
+           <div id="commentbox">      
+			<table>
+	<thead>
+		<tr>
+			<th><h1>Leave a comment!</h1></th>
+			
+				</tr>
+			</thead>
+				<tbody>
+				<tr>
+					<td><h3>ssss</h3></td>
+				</tr>   
+					<tr>
+						<td><h3>ssss</h3></td>
+					</tr>
+					<tr>
+						<td><h3>ssss</h3></td>
+					</tr>
+				</tbody>
+			</table>
+            <form action="/html/tags/html_form_tag_action.cfm" method="post">
+			<div>
+		<textarea class="txtarea" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
+			</div>
+			<input class="small button" type="submit" value="Submit">
+			</form>          
+           </div>
+        </div>
+      </div>    
     </div>
   </body>
 </html>
+<script>
+function setBackgroundColour(color)
+{
+	document.getElementById("bgCol").style.background=color
+}
+</script>
