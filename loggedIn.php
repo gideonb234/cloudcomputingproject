@@ -42,8 +42,7 @@
       </div>
     </div>
     <div class="row">
-       <!-- upload button, use to upshit up  -->
-      <!-- <p><a href="#up?" class="button">Upload</a><br/> --> 
+       <p><button class="small button" type="submit" name="image" form="imageForm">Upload</button></br>
        
         </div>
     </div>
@@ -67,7 +66,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" value="" />
       </div>
-      <input class="small button" type="submit" name="login_form" value="Log In" />
+      <button class="small button" type="submit" name="login_form"/>Log In</button>
     </form>
     <a class="close" href="#close"></a>
   </div>
@@ -94,7 +93,7 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" value="" />
       </div>
-      <input class="small button" type="submit" name="register_form" value="Register" />
+      <button class="small button" type="submit" name="register_form"/>Register</button>
     </form>
     <a class="close" href="#close"></a>
   </div>
