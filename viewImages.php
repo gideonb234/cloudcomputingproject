@@ -41,7 +41,7 @@
           $string = 'https://storage.googleapis.com/cloud-computing-storage/'.$image[image_filepath];
           echo '
           <div class="floated_img" style="height:10px; width:10px;">
-            <a href="http://goo.gl/ytbJn8"><img class="resize" src="'.$string.'" alt="img">
+            <a href="image.php?image_id=' . $image[image_id].'"><img class="resize" src="'.$string.'" alt="img">
         </div>';
           $count--;
         } 
