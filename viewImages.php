@@ -1,6 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+  <?php
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+      header("Location:index.php");
+    }
+  ?>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
