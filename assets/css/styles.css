@@ -48,12 +48,14 @@ a:hover{
 }
 
 .txtarea{
-    BORDER-RIGHT: #646464 ;
-    BORDER-TOP: #646464;    
-    BORDER-LEFT: #646464;
-    BORDER-BOTTOM: #646464;
-    width:100%;
-    BACKGROUND: #ffffcc;    
+    
+	width:99%;
+	height: 120px;
+	border: 3px solid #cccccc;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
 }
 
 

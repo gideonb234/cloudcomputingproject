@@ -37,7 +37,7 @@
       
       <div class="large-12 columns">
         <div class="callout large">     
-           <div id="commentbox">
+           <div id="commentbox">      
 			<table>
 	<thead>
 		<tr>
@@ -59,8 +59,7 @@
 			</table>
             <form action="/html/tags/html_form_tag_action.cfm" method="post">
 			<div>
-			<textarea class="txtarea" name="comments" id="comments" 
-            style="font-family:sans-serif;font-size:1.2em;height:50px;"> </textarea>
+		<textarea class="txtarea" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
 			</div>
 			<input class="small button" type="submit" value="Submit">
 			</form>          
@@ -70,3 +69,9 @@
     </div>
   </body>
 </html>
+<script>
+function setBackgroundColour(color)
+{
+	document.getElementById("bgCol").style.background=color
+}
+</script>
