@@ -45,7 +45,7 @@
    			 <input type="file" name="user_image" id="image" class="input_text" onchange="readURL(this);"/>
  		   </form>
            		</div>
-                <img style="width:720px; height:auto;" class="imageSingleResize hide" id="imagePort" src="#"/>
+                <img style="width:720px; height:auto;" class="imageSingleResize" id="imagePort" style="visibility: hidden;" src="#"/>
            
 			</div>
           </div>
@@ -64,8 +64,7 @@
   function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            var img = document.getElementById('imagePort');
-            img.classList.remove('hide');
+            document.getElementById('imagePort').style.visibility = "visible";
             reader.onload = function (e) {
                 $('#imagePort')
                     .attr('src', e.target.result)
