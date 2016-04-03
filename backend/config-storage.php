@@ -1,6 +1,6 @@
 <?php
 
-require_once '../error-enable.php';
+//require_once '../error-enable.php';
 require_once 'config-sql.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';

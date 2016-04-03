@@ -5,7 +5,7 @@
  * Handle comments for each image as well (just create and list is needed)
  */
 
-include_once '../error-enable.php';
+//include_once '../error-enable.php';
 include_once 'config-sql.php';
 include_once 'config-storage.php';
 
@@ -17,8 +17,8 @@ class ImageHandler{
         $conn = $db->connection();
         $encoded_url = $conn->quote($result_url);
         try {
-            $stmt = $conn->prepare("INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES(:image_path, :uid)");
-            $stmt->bindParam(':image_path', $result_url, PDO::PARAM_STR);
+            $stmt = $conn->prepare("INSERT INTO Image(`image_filepath`, `image_user_fk`) VALUES(:image_name, :uid)");
+            $stmt->bindParam(':image_name', $file, PDO::PARAM_STR);
             $stmt->bindParam(':uid', $_SESSION['user_id'], PDO::PARAM_INT);
             $stmt->execute();
             return $conn->lastInsertId();
@@ -34,7 +34,7 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $conn = $db->connection();
-            $statement = $conn->prepare('SELECT * FROM Image WHERE image_id = :image_id');
+            $statement = $conn->prepare("SELECT * FROM Image WHERE `image_id` = :image_id");
             $statement->bindValue(':image_id', $image_id);
             $statement->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);
@@ -67,7 +67,7 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $conn = $db->connection();
-            $statement = $conn->prepare('INSERT INTO Comment (comment_image_fk, comment_user_fk, comment_text) VALUES (:image_id, :user_id, :comment_text');
+            $statement = $conn->prepare("INSERT INTO Comment (`comment_image_fk`, `comment_user_fk`, `comment_text`) VALUES (:image_id, :user_id, :comment_text");
             $statement->bindParam(':image_id', $image_id);
             $statement->bindParam(':user_id', $user_id);
             $statement->bindParam(':comment_text', $comment);
@@ -83,7 +83,7 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $conn = $db->connection();
-            $stmt = $conn->prepare('SELECT * FROM Comment WHERE comment_image_fk == :image_id');
+            $stmt = $conn->prepare("SELECT * FROM Comment WHERE `comment_image_fk` == :image_id");
             $stmt->bindParam(':image_id', $image_id);
             $stmt->execute();
             return $statement->fetch(PDO::FETCH_ASSOC);

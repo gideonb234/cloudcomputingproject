@@ -1,18 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <?php
+  include_once('backend/images.php');
   session_start();
   if (!isset($_SESSION['user_id'])) {
     header("Location:index.php");
-  }
-  if (isset($_SESSION['last_image_id'])){
-    $image_id = $_SESSION['last_image_id'];
-    $imgcon = new ImageHandler();
-    $img = $imgcon->getImage($image_id);
-  } else if(isset($_GET['image_id'])) {
-    $image_id = $_GET['last_image_id'];
-    $imgcon = new ImageHandler();
-    $img = $imgcon->getImage($image_id);
   }
 ?>
   <head>
@@ -38,8 +30,17 @@
         <div class="callout large">     
            <div id="singleimagebox">
            <!-- image crap goes here, i'll do a get thing or whatever -->
-			<img src="<?php echo $last_image_id;?>" 
-				style="width: auto; height: auto;max-width: 720px;max-height: auto">
+        <?php
+        if (isset($_GET['image_id'])){
+          $image_id = $_GET['image_id'];
+          $imgcon = new ImageHandler();
+          $img = $imgcon->getImage($image_id);
+          print_r($img);
+          $string = 'https://storage.googleapis.com/cloud_computing_storage/'.$img->image_filepath;
+          echo'<img src="'.$string.'" 
+        style="width: auto; height: auto;max-width: 720px;max-height: auto">'
+        }
+        ?>
            </div>
         </div>
       </div>

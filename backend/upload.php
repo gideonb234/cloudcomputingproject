@@ -1,5 +1,5 @@
 <?php
-include_once('../error-enable.php');
+//include_once('../error-enable.php');
 include_once('images.php');
 session_start();
 $id = $_SESSION['user_id'];
