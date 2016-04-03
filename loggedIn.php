@@ -61,11 +61,14 @@
   </body>
   
   <script>
+  $(document).ready(function(){
+    var img = document.getElementById('imagePort');
+    img.classList.add('hidden');
+  });
   function readURL(input) {
-        var img = document.getElementById('imagePort');
-        img.classList.add('hidden');
         if (input.files && input.files[0]) {
             var reader = new FileReader();
+            var img = document.getElementById('imagePort');
             img.classList.remove('hidden');
             reader.onload = function (e) {
                 $('#imagePort')
