@@ -35,8 +35,7 @@
        <?php
         require_once('backend/images.php');
         $images = new ImageHandler();
-        $uid = $_SESSION['user_id'];
-        $listOfImages = $images->listImages($uid);
+        $listOfImages = $images->listImagesIndex();
         $count = 20;
         foreach($listOfImages as $image){
           $string = 'https://storage.googleapis.com/cloud-computing-storage/'.$image[image_filepath];
@@ -48,7 +47,6 @@
         } 
         for ($i=0; $i < $count; $i++) { 
           echo '<div class="floated_img" style="height:10px; width:10px;">
-            <a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
         </div>';
         }
        ?>               

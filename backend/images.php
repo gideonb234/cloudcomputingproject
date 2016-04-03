@@ -59,6 +59,20 @@ class ImageHandler{
         }
     }
 
+    public function listImagesIndex() {
+        try {
+            $db = new CloudSql();
+            $pdo = $db->connection();
+            $statement = $pdo->prepare("SELECT * FROM Image ORDER BY image_id DESC LIMIT 50");
+            $statement->bindParam(':user', $user_id, PDO::PARAM_INT);
+            $statement->execute();
+            return $statement->fetchAll();
+        } catch (PDOException $e) {
+            var_dump($e);
+            die();
+        }
+    }
+
     public function createComment($comment, $image_id, $user_id) {
         try {
             $db = new CloudSql();
