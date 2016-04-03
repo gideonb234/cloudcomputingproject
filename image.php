@@ -83,7 +83,7 @@
         if (isset($_SESSION['user_id'])) {
         echo '<form action="#" method="post">
 			<div>
-		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour("#e5fff3");this.value='.';" onblur="setBackgroundColour("white")>Leave your comment here...</textarea>
+		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour("#e5fff3");this.value="'.'";" onblur="setBackgroundColour("white")>Leave your comment here...</textarea>
 			</div>
 			<input class="small button" name="comment" type="submit" value="Submit">
 			</form>';
@@ -141,10 +141,10 @@
     </form>
     <a class="close" href="#close"></a>
   </div>
-</html>
-<script>
+  <script>
 function setBackgroundColour(color)
 {
-	document.getElementById("bgCol").style.background=color
+  document.getElementById("bgCol").style.background=color
 }
 </script>
+</html>

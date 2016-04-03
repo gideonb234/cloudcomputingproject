@@ -62,9 +62,11 @@
   
   <script>
   function readURL(input) {
+        var img = document.getElementById('imagePort');
+        img.classList.add('hidden');
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-
+            img.classList.remove('hidden');
             reader.onload = function (e) {
                 $('#imagePort')
                     .attr('src', e.target.result)
