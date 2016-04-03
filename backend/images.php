@@ -79,10 +79,10 @@ class ImageHandler{
         try {
             $db = new CloudSql();
             $conn = $db->connection();
-            $stmt = $conn->prepare("SELECT * FROM Comment WHERE `comment_image_fk` == :image_id");
+            $stmt = $conn->prepare("SELECT * FROM Comment WHERE `comment_image_fk` = :image_id");
             $stmt->bindParam(':image_id', $image_id);
             $stmt->execute();
-            return $statement->fetch(PDO::FETCH_ASSOC);
+            return $statement->fetchAll();
         } catch (PDOException $e) {
             var_dump($e);
             die();

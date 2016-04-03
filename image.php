@@ -6,6 +6,11 @@
   if (!isset($_SESSION['user_id'])) {
     header("Location:index.php");
   }
+  if(isset($_POST['comment'])) {
+    $comment = new ImageHandler();
+    $comment->createComment($_POST['comment'],$_GET['image_id'],$_SESSION['user_id']);
+    echo "success";
+  }
 ?>
   <head>
     <meta charset="utf-8" />
@@ -55,22 +60,28 @@
 				</tr>
 			</thead>
 				<tbody>
-				<tr>
-					<td><h3>ssss</h3></td>
-				</tr>   
-					<tr>
-						<td><h3>ssss</h3></td>
-					</tr>
+				<?php
+        if(isset($_GET['image_id'])){
+          $iid = $_GET['image_id'];
+          $comment = new ImageHandler();
+          $listOfComments = $comment->listComments($iid);
+          foreach ($listOfComments as $com) {
+            echo "<tr>
+            <td><h3>".$com[comment_text]."</h3></td>
+          </tr>"
+          }
+        }
+        ?>
 					<tr>
 						<td><h3>ssss</h3></td>
 					</tr>
 				</tbody>
 			</table>
-            <form action="/html/tags/html_form_tag_action.cfm" method="post">
+        <form action="#" method="post">
 			<div>
-		<textarea class="txtarea" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
+		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
 			</div>
-			<input class="small button" type="submit" value="Submit">
+			<input class="small button" name="comment"type="submit" value="Submit">
 			</form>          
            </div>
         </div>
