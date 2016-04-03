@@ -72,9 +72,6 @@
           }
         }
         ?>
-					<tr>
-						<td><h3>ssss</h3></td>
-					</tr>
 				</tbody>
 			</table>
         <form action="#" method="post">
