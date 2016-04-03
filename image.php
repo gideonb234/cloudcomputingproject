@@ -62,7 +62,7 @@
 			<textarea class="txtarea" name="comments" id="comments" 
             style="font-family:sans-serif;font-size:1.2em;height:50px;"> </textarea>
 			</div>
-			<input type="submit" value="Submit">
+			<input class="small button" type="submit" value="Submit">
 			</form>          
            </div>
         </div>
