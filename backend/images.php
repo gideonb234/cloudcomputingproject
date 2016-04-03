@@ -45,7 +45,7 @@ class ImageHandler{
 
     // todo: fix this
 
-    public function listImages($listLimit = 20, $user_id) {
+    public function listImages($user_id) {
         try {
             $db = new CloudSql();
             $pdo = $db->connection();
