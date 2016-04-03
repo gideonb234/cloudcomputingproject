@@ -1,15 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<?php
-  session_start();
-  if (!isset($_SESSION['user_id'])) {
-    header("Location:index.php");
-  }
-?>
+  <?php
+    session_start();
+    if(isset($_SESSION['user_id'])){
+      header("Location:loggedIn.php");
+    }
+  ?>
   <head>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,64 +19,48 @@
     <div class="row">
       <div class="large-12 columns">
        
-		<p><a href="loggedIn.php" class="small button">Upload</a><br/></p>       
-        <p><a href="allimages.php" class="small button">Gallery</a><br/></p>
-        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
-        <p><a href="logout.php" class="small button">Logout</a><br/></p>
-   		<a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
+        <p><a href="#regform_form" class="small button">Register</a><br/>
+        <p><a href="#login_form" class="small button">Login</a><br/>
+        <a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-12 columns">	
         <div class="callout large">     
-           <div id="dropbox">
-           <div class="browse">
-           <!-- uhh hope this works <3 -->
-   			 
-             <span class="message"><h2 id="subtitle" >Click to Upload an Image</h2></span>
-             
-           
-             <!-- uhh hope this works <3 -->
-           <form id="imageForm" method="post" action="backend/upload.php" enctype="multipart/form-data">
-   			 <input type="file" name="user_image" id="image" class="input_text" onchange="readURL(this);"/>
- 		   </form>
-           		</div>
-                <img style="width:720px; height:auto;" class="imageSingleResize" id="imagePort" src="#"/>
-           
-			</div>
+          <div id="imagebox">
+       <h2 style="text-align:centre">Sign in to start uploading!</h2>
+       
+       <?php
+        require_once('backend/images.php');
+        $images = new ImageHandler();
+        $listOfImages = $images->listImagesIndex();
+        $count = 20;
+        foreach($listOfImages as $image){
+          $string = 'https://storage.googleapis.com/cloud-computing-storage/'.$image[image_filepath];
+          echo '
+          <div class="floated_img" style="height:10px; width:10px;">
+            <a href="image.php?image_id=' . $image[image_id].'"><img class="resize" src="'.$string.'" alt="img">
+        </div>';
+          $count--;
+        } 
+        for ($i=0; $i < $count; $i++) { 
+          echo '<div class="floated_img" style="height:10px; width:10px;">
+        </div>';
+        }
+       ?>               
+          </div>
           </div>
           
         </div>
-      </div>
-    </div>
+      </div> 
     <div class="row">
-       <p><button class="small button" type="submit" name="image" form="imageForm">Upload</button></br>
+      
+      <!-- upload button, use to upshit up  -->
+      <!-- <p><a href="#up?" class="button">Upload</a><br/> --> 
        
-        </div>
     </div>
   </body>
-  
-  <script>
-  function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#imagePort')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-					document.getElementById('subtitle').innerHTML= '';
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-  </script>
-  
-  
-  
   
   <!-- popup form #1 -->
   <a href="#x" class="overlay" id="login_form"></a>
