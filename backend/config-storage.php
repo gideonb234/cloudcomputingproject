@@ -23,6 +23,19 @@ class CloudStorage
         $obj = new Google_Service_Storage_StorageObject();
         $bucketName = 'cloud-computing-storage';
         $obj->setName($file);
+        // this access control is for project owners
+        $ownerAccess = new Google_Service_Storage_ObjectAccessControl();
+        $ownerAccess->setEntity('project-owners-' . $projectId);
+        $ownerAccess->setRole('OWNER');
+
+        // this access control is for public access
+        $readerAccess = new Google_Service_Storage_ObjectAccessControl();
+        $readerAccess->setEntity('allUsers');
+        $readerAccess->setRole('READER');
+
+        $obj = new Google_Service_Storage_StorageObject();
+        $obj->setName($filename);
+        $obj->setAcl([$ownerAccess, $readerAccess]);
         $obj = $client->objects->insert($bucketName, $obj, array(
             'data' => file_get_contents($localFile),
             'uploadType' => 'media',
