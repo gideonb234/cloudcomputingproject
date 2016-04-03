@@ -67,7 +67,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" value="" />
       </div>
-      <input type="submit" name="login_form" value="Log In" />
+      <input class="small button" type="submit" name="login_form" value="Log In" />
     </form>
     <a class="close" href="#close"></a>
   </div>
@@ -94,7 +94,7 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" value="" />
       </div>
-      <input type="submit" name="register_form" value="Register" />
+      <input class="small button" type="submit" name="register_form" value="Register" />
     </form>
     <a class="close" href="#close"></a>
   </div>
