@@ -42,7 +42,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns">
+       <!-- upload button, use to upshit up  -->
+      <!-- <p><a href="#up?" class="button">Upload</a><br/> --> 
+       
         </div>
     </div>
   <form method="post" action="backend/upload.php" enctype="multipart/form-data">
