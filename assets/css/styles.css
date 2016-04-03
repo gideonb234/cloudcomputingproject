@@ -87,6 +87,10 @@ a:hover{
     margin: 0 auto;
 }
 
+#imagePort{
+visibility: hidden;
+}
+
 #dropbox{
 	background:url('../img/background_tile_3.jpg');
 	border-radius:3px;
