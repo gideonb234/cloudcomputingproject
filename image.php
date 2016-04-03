@@ -36,7 +36,7 @@
           $imgcon = new ImageHandler();
           $img = $imgcon->getImage($image_id);
           $string = 'https://storage.googleapis.com/cloud-computing-storage/'.$img[image_filepath];
-          echo'<img src="'.$string.'"style="width: auto; height: auto;max-width: 720px;max-height: auto">';
+          echo'<img src="'.$string.'"class="imageSingleResize">';
         }
         ?>
            </div>
