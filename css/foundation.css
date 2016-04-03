@@ -106,14 +106,14 @@ body {
   margin: 0 0.3rem 0;
   font-size: 0.9rem;
   background-color: #fefefe;
-  color: #990000; }
+  color: #000000; }
   
   .button:hover, .button:focus {
-    background-color: #4c924c;
-    color: #990000; }
+    background-color: #000000;
+    color: #fefefe; }
   
   .button.small {
-    font-size: 0.75rem;
+    font-size: .75rem;
 	padding-top: 5 }
 
 	.callout {
