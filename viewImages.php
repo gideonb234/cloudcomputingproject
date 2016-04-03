@@ -34,7 +34,12 @@
   		<div class="floated_img" style="height:10px; width:10px;">
    			<a href="link"> <img class="resize" src="assets/img/blank.gif" alt="">
 		</div> 
-        
+       <?php
+        require_once('backend/images.php');
+        $images = new ImageHandler();
+        $listOfImages = $images->listImages($_SESSION['user_id']);
+        print_r($listOfImages);
+       ?> 
                  <div class="floated_img" style="height:10px; width:10px;">
    			 		<a href="http://goo.gl/ytbJn8"><img class="resize" src="http://goo.gl/ytbJn8" alt="img">
 				</div>
