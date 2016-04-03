@@ -1,11 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <?php
-    session_start();
-    if(isset($_SESSION['user_id'])){
-      header("Location:loggedIn.php");
-    }
-  ?>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,8 +13,10 @@
     <div class="row">
       <div class="large-12 columns">
        
-        <p><a href="#regform_form" class="small button">Register</a><br/>
-        <p><a href="#login_form" class="small button">Login</a><br/>
+        <p><a href="loggedIn.php" class="small button">Upload</a><br/></p>       
+        <p><a href="allimages.php" class="small button">Gallery</a><br/></p>
+        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
+        <p><a href="logout.php" class="small button">Logout</a><br/></p>
         <a href="index.php" style="text-decoration:none; color:inherit;"><h2> Image Uploader <h2></a>
       </div>
     </div>

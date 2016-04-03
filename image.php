@@ -23,7 +23,9 @@
       <div class="large-12 columns">
         <?
         if(isset($_SESSION['user_id'])){
-        echo'<p><a href="viewImages.php" class="small button">View Images</a><br/></p>
+        echo' <p><a href="loggedIn.php" class="small button">Upload</a><br/></p>       
+        <p><a href="allimages.php" class="small button">Gallery</a><br/></p>
+        <p><a href="viewImages.php" class="small button">View Images</a><br/></p>
         <p><a href="logout.php" class="small button">Logout</a><br/></p>';
       } else {
         echo'<p><a href="#regform_form" class="small button">Register</a><br/>
