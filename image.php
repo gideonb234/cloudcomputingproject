@@ -3,9 +3,6 @@
 <?php
   include_once('backend/images.php');
   session_start();
-  if (!isset($_SESSION['user_id'])) {
-    header("Location:index.php");
-  }
   if(isset($_POST['comment'])) {
     $comment = new ImageHandler();
     $comment->createComment($_POST['comment_text'],$_GET['image_id'],$_SESSION['user_id']);
@@ -74,12 +71,17 @@
         ?>
 				</tbody>
 			</table>
-        <form action="#" method="post">
+      <?php
+        if (isset($_SESSION['user_id'])) {
+        echo '<form action="#" method="post">
 			<div>
-		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour('#e5fff3');this.value='';" onblur="setBackgroundColour('white')">Leave your comment here...</textarea>
+		<textarea class="txtarea" name="comment_text" id="bgCol" onfocus="setBackgroundColour("#e5fff3");this.value='';" onblur="setBackgroundColour("white")>Leave your comment here...</textarea>
 			</div>
 			<input class="small button" name="comment" type="submit" value="Submit">
-			</form>          
+			</form>';
+      } else {
+        echo '<h2>You must be logged in to leave comments</h2>';
+      }
            </div>
         </div>
       </div>    
