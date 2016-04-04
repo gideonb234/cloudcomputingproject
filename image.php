@@ -6,7 +6,6 @@
   if(isset($_POST['comment'])) {
     $comment = new ImageHandler();
     $comment->createComment($_POST['comment_text'],$_GET['image_id'],$_SESSION['user_id']);
-    echo "success";
   }
 ?>
   <head>
